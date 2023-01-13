@@ -1,0 +1,14 @@
+package com.rishabh.website.repo;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.rishabh.website.model.Cart;
+import com.rishabh.website.model.User;
+
+public interface CartRepo extends JpaRepository<Cart, Integer> {
+	
+	List<Cart> findAllByUserOrderByCreatedDateDesc(User user);
+	
+}
